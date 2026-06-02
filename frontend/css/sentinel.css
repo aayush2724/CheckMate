@@ -1,3 +1,146 @@
+@import url('shared.css');
+
+html { scroll-behavior: smooth; }
+
+body.page-shell {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at top left, rgba(0,240,255,0.08), transparent 34%),
+    radial-gradient(circle at 82% 10%, rgba(78,222,163,0.08), transparent 28%),
+    radial-gradient(circle at 50% 110%, rgba(192,193,255,0.06), transparent 30%),
+    #0d1515;
+}
+
+body.page-shell::before,
+body.page-shell::after {
+  content: '';
+  position: fixed;
+  inset: -20vmax;
+  pointer-events: none;
+  z-index: -2;
+}
+
+body.page-shell::before {
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 60%);
+  animation: drift 26s ease-in-out infinite alternate;
+}
+
+body.page-shell::after {
+  background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.025) 24%, transparent 48%, rgba(0,240,255,0.03) 72%, transparent 100%);
+  mix-blend-mode: screen;
+  animation: shimmer 18s linear infinite;
+}
+
+.scene-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.scene-grid {
+  background-image: radial-gradient(rgba(125,244,255,0.08) 1px, transparent 0);
+  background-size: 42px 42px;
+  opacity: 0.12;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.95), rgba(0,0,0,0.45));
+}
+
+.scene-ribbon {
+  background: linear-gradient(110deg, transparent 0%, rgba(255,255,255,0.02) 18%, transparent 38%, rgba(0,240,255,0.04) 60%, transparent 82%, rgba(78,222,163,0.03) 100%);
+  opacity: 0.75;
+  animation: shimmer 14s linear infinite;
+}
+
+.scene-orb {
+  position: fixed;
+  border-radius: 999px;
+  filter: blur(18px);
+  mix-blend-mode: screen;
+  opacity: 0.8;
+  animation: drift 20s ease-in-out infinite alternate;
+}
+
+.scene-orb.one {
+  top: -10vmax;
+  left: -6vmax;
+  width: 38vmax;
+  height: 38vmax;
+  background: radial-gradient(circle, rgba(0,240,255,0.18) 0%, rgba(0,240,255,0.05) 32%, transparent 68%);
+}
+
+.scene-orb.two {
+  top: 8vmax;
+  right: -8vmax;
+  width: 32vmax;
+  height: 32vmax;
+  background: radial-gradient(circle, rgba(78,222,163,0.16) 0%, rgba(78,222,163,0.05) 36%, transparent 70%);
+  animation-duration: 26s;
+  animation-direction: alternate-reverse;
+}
+
+.scene-orb.three {
+  right: 22vw;
+  bottom: -16vmax;
+  width: 28vmax;
+  height: 28vmax;
+  background: radial-gradient(circle, rgba(192,193,255,0.14) 0%, rgba(192,193,255,0.05) 34%, transparent 72%);
+  animation-duration: 32s;
+}
+
+.content-stage {
+  position: relative;
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #3b494b transparent;
+  scrollbar-gutter: stable both-edges;
+}
+
+.content-stage::-webkit-scrollbar { width: 10px; }
+.content-stage::-webkit-scrollbar-track { background: transparent; }
+.content-stage::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(0,240,255,0.35), rgba(78,222,163,0.35));
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+
+.orientation-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  background: rgba(15,20,32,0.56);
+  backdrop-filter: blur(20px) saturate(130%);
+  box-shadow: 0 18px 60px rgba(0,0,0,0.22);
+}
+
+.orientation-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(125,244,255,0.1);
+  background: rgba(255,255,255,0.03);
+  color: #dce4e5;
+  font-family: 'Geist', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.orientation-pill strong {
+  color: #7df4ff;
+  font-weight: 700;
+}
+
 /* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: #0d1515; }
@@ -105,9 +248,27 @@
 
 /* ── Glass panel ── */
 .glass-panel {
-  backdrop-filter: blur(20px);
-  background: rgba(21,29,30,.6);
-  border: 1px solid rgba(255,255,255,.05);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(24px) saturate(135%);
+  background: linear-gradient(180deg, rgba(21,29,30,.76), rgba(17,22,34,.44));
+  border: 1px solid rgba(125,244,255,.08);
+  box-shadow: 0 22px 80px rgba(0,0,0,.28);
+  transform-style: preserve-3d;
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, border-color .35s ease;
+}
+.glass-panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,.06), transparent 34%, transparent 66%, rgba(0,240,255,.05));
+  pointer-events: none;
+  opacity: .9;
+}
+.glass-panel:hover {
+  transform: translateY(-3px) rotateX(1deg);
+  border-color: rgba(125,244,255,.16);
+  box-shadow: 0 26px 90px rgba(0,0,0,.34);
 }
 
 /* ── Glow effects ── */
@@ -134,6 +295,16 @@
 
 /* ── Chart.js canvas override ── */
 canvas { max-width: 100%; }
+
+@keyframes drift {
+  from { transform: translate3d(-1.5%, -1%, 0) scale(1); }
+  to { transform: translate3d(1.5%, 2%, 0) scale(1.04); }
+}
+
+@keyframes shimmer {
+  from { transform: translate3d(-12%, 0, 0); }
+  to { transform: translate3d(12%, 0, 0); }
+}
 
 /* ── Heatmap hour cell ── */
 .hour-cell {

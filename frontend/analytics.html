@@ -42,7 +42,13 @@ tailwind.config = {
 }
 </script>
 </head>
-<body class="font-body-base text-on-surface overflow-hidden">
+<body class="font-body-base text-on-surface overflow-hidden page-shell">
+
+<div class="scene-layer scene-grid"></div>
+<div class="scene-layer scene-ribbon"></div>
+<div class="scene-orb one"></div>
+<div class="scene-orb two"></div>
+<div class="scene-orb three"></div>
 
 <!-- Sidebar -->
 <aside class="fixed left-0 top-0 h-screen w-[280px] bg-surface-container-low border-r border-outline-variant/10 flex flex-col py-lg px-md z-50">
@@ -117,8 +123,13 @@ tailwind.config = {
   </header>
 
   <!-- Content -->
-  <div class="flex-1 overflow-y-auto p-margin-desktop">
+  <div class="flex-1 overflow-y-auto p-margin-desktop content-stage">
     <div class="max-w-[1440px] w-full mx-auto">
+      <div class="orientation-bar">
+        <span class="orientation-pill"><strong>7/30/90</strong> trend window</span>
+        <span class="orientation-pill"><strong>heatmap</strong> peak hours</span>
+        <span class="orientation-pill"><strong>split</strong> departments</span>
+      </div>
       <div class="mb-lg">
         <h2 class="font-display-lg text-display-lg tracking-tighter text-primary">Analytics &amp; Reports</h2>
         <p class="text-on-surface-variant opacity-70 mt-xs">Visitor intelligence, behavioral patterns &amp; security insights</p>
