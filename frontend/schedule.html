@@ -133,7 +133,7 @@ tailwind.config = {
           <h2 class="font-display-lg text-display-lg tracking-tighter text-primary">Schedule a Visit</h2>
           <p class="text-on-surface-variant mt-xs max-w-xl">Configure access credentials and logistical parameters for incoming external personnel. Ensure all mandatory fields are validated for security protocol compliance.</p>
         </div>
-        <button class="flex items-center gap-xs px-md py-sm border border-outline-variant/30 text-on-surface-variant rounded-lg hover:bg-surface-container transition-all font-label-sm">
+        <button class="surface-button flex items-center gap-xs px-md py-sm border border-outline-variant/30 text-on-surface-variant rounded-lg hover:bg-surface-container transition-all font-label-sm">
           <span class="material-symbols-outlined text-[16px]">upload_file</span>
           Import Guest List
         </button>
@@ -144,7 +144,7 @@ tailwind.config = {
         <div class="grid grid-cols-12 gap-gutter">
           <!-- Personal info -->
           <div class="col-span-12 lg:col-span-4 flex flex-col gap-gutter">
-            <div class="p-lg rounded-xl border border-outline-variant/10 bg-surface-container-low/50 relative overflow-hidden">
+            <div class="surface-card surface-card--dense p-lg rounded-xl border border-outline-variant/10 bg-surface-container-low/50 relative overflow-hidden">
               <div class="absolute top-0 left-0 w-1 h-full bg-secondary"></div>
               <div class="flex items-center gap-sm mb-lg">
                 <span class="material-symbols-outlined text-secondary">person</span>
@@ -178,7 +178,7 @@ tailwind.config = {
               </div>
             </div>
 
-            <div class="p-lg rounded-xl border border-outline-variant/10 bg-surface-container-low/50">
+            <div class="surface-card surface-card--dense p-lg rounded-xl border border-outline-variant/10 bg-surface-container-low/50">
               <div class="flex items-center justify-between mb-md">
                 <p class="font-label-sm uppercase tracking-widest text-on-surface-variant">Identity Verification</p>
                 <span class="bg-secondary/10 text-secondary px-sm py-xs rounded-full font-label-sm">Required</span>
@@ -193,7 +193,7 @@ tailwind.config = {
 
           <!-- Visit details -->
           <div class="col-span-12 lg:col-span-4">
-            <div class="h-full p-lg rounded-xl border border-outline-variant/10 bg-surface-container relative overflow-hidden">
+            <div class="surface-card surface-card--dense h-full p-lg rounded-xl border border-outline-variant/10 bg-surface-container relative overflow-hidden">
               <div class="absolute top-0 left-0 w-1 h-full bg-primary-container"></div>
               <div class="flex items-center gap-sm mb-lg">
                 <span class="material-symbols-outlined text-primary-container">location_on</span>
@@ -289,7 +289,7 @@ tailwind.config = {
               </div>
             </div>
 
-            <div class="p-lg rounded-xl glass-panel relative overflow-hidden">
+            <div class="surface-card surface-card--hero p-lg rounded-xl glass-panel relative overflow-hidden">
               <div class="absolute inset-0 bg-gradient-to-br from-primary-container/5 to-transparent pointer-events-none"></div>
               <p class="text-[11px] text-on-surface-variant mb-md leading-relaxed">By confirming this schedule, you authorize the generation of a digital access token and notify the relevant departmental security personnel.</p>
               <button id="submit-btn" type="submit" class="w-full py-lg bg-primary-container text-on-primary-container font-headline-md uppercase tracking-tighter font-black rounded-lg hover:brightness-110 active:scale-[0.98] transition-all glow-sm flex items-center justify-center gap-md">
@@ -303,7 +303,7 @@ tailwind.config = {
 
       <!-- Bottom metrics -->
       <div class="mt-xl grid grid-cols-1 md:grid-cols-4 gap-md">
-        <div class="p-md rounded-lg border border-outline-variant/10 bg-surface-container-lowest/50 flex items-center gap-md" id="m-active">
+        <div class="surface-card surface-card--dense p-md rounded-lg border border-outline-variant/10 bg-surface-container-lowest/50 flex items-center gap-md" id="m-active">
           <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
             <span class="material-symbols-outlined text-primary text-[18px]">group</span>
           </div>
@@ -312,7 +312,7 @@ tailwind.config = {
             <p class="font-headline-md text-primary">—</p>
           </div>
         </div>
-        <div class="p-md rounded-lg border border-outline-variant/10 bg-surface-container-lowest/50 flex items-center gap-md">
+        <div class="surface-card surface-card--dense p-md rounded-lg border border-outline-variant/10 bg-surface-container-lowest/50 flex items-center gap-md">
           <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
             <span class="material-symbols-outlined text-secondary text-[18px]">pending_actions</span>
           </div>
@@ -321,7 +321,7 @@ tailwind.config = {
             <p class="font-headline-md text-secondary">—</p>
           </div>
         </div>
-        <div class="p-md rounded-lg border border-outline-variant/10 bg-surface-container-lowest/50 flex items-center gap-md">
+        <div class="surface-card surface-card--dense p-md rounded-lg border border-outline-variant/10 bg-surface-container-lowest/50 flex items-center gap-md">
           <div class="w-10 h-10 rounded-full bg-tertiary-container/10 flex items-center justify-center flex-shrink-0">
             <span class="material-symbols-outlined text-tertiary-container text-[18px]">door_open</span>
           </div>
@@ -330,7 +330,7 @@ tailwind.config = {
             <p class="font-headline-md text-tertiary-fixed-dim">—</p>
           </div>
         </div>
-        <div class="p-md rounded-lg border border-outline-variant/10 bg-surface-container-lowest/50 flex items-center gap-md">
+        <div class="surface-card surface-card--dense p-md rounded-lg border border-outline-variant/10 bg-surface-container-lowest/50 flex items-center gap-md">
           <div class="w-10 h-10 rounded-full bg-error/10 flex items-center justify-center flex-shrink-0">
             <span class="material-symbols-outlined text-error text-[18px]">warning</span>
           </div>
@@ -356,7 +356,7 @@ tailwind.config = {
     <div class="text-[11px] text-on-surface-variant font-code-snippet bg-surface-container rounded p-md text-left mb-md leading-relaxed" id="success-details"></div>
     <img id="success-qr" style="display:none;" class="w-28 h-28 mx-auto mb-md border border-outline-variant rounded-lg bg-white p-1" alt="QR Code">
     <div class="flex gap-sm justify-center">
-      <button onclick="window.print()" class="flex items-center gap-xs px-md py-sm border border-outline-variant/30 rounded text-on-surface-variant hover:text-primary hover:border-primary transition-all font-label-sm">
+      <button onclick="window.print()" class="surface-button flex items-center gap-xs px-md py-sm border border-outline-variant/30 rounded text-on-surface-variant hover:text-primary hover:border-primary transition-all font-label-sm">
         <span class="material-symbols-outlined text-[16px]">print</span> Print
       </button>
       <button onclick="document.getElementById('success-overlay').style.display='none'" class="flex items-center gap-xs px-md py-sm bg-primary-container text-on-primary-container rounded font-label-sm hover:brightness-110 transition-all">

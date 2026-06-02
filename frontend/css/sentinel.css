@@ -141,6 +141,125 @@ body.page-shell::after {
   font-weight: 700;
 }
 
+.surface-card,
+.glass-panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(125,244,255,0.08);
+  background: linear-gradient(180deg, rgba(21,29,30,.78), rgba(17,22,34,.48));
+  box-shadow: 0 22px 80px rgba(0,0,0,.28);
+  backdrop-filter: blur(24px) saturate(135%);
+  transform-style: preserve-3d;
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, border-color .35s ease;
+}
+
+.surface-card::after,
+.glass-panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,.06), transparent 34%, transparent 66%, rgba(0,240,255,.05));
+  pointer-events: none;
+  opacity: .9;
+}
+
+.surface-card:hover,
+.glass-panel:hover {
+  transform: translateY(-3px) rotateX(1deg);
+  border-color: rgba(125,244,255,.16);
+  box-shadow: 0 26px 90px rgba(0,0,0,.34);
+}
+
+.surface-card--hero {
+  border-color: rgba(0,240,255,.14);
+  background: linear-gradient(135deg, rgba(0,240,255,.08), rgba(78,222,163,.04) 42%, rgba(21,29,30,.74));
+}
+
+.surface-card--dense {
+  border-radius: 16px;
+}
+
+.surface-control,
+.surface-select,
+.surface-textarea,
+.surface-button,
+.surface-tab,
+.tab,
+#export-btn,
+#clear-dates,
+#date-from,
+#date-to,
+#search-input,
+.input-underline,
+textarea,
+select,
+button[onclick] {
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease;
+}
+
+.surface-control,
+.surface-select,
+.surface-textarea,
+.input-underline,
+#search-input,
+#date-from,
+#date-to,
+textarea,
+select {
+  background: rgba(25,34,35,.72);
+  border: 1px solid rgba(125,244,255,.1);
+  color: #dce4e5;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.02);
+}
+
+.surface-control:focus,
+.surface-select:focus,
+.surface-textarea:focus,
+.input-underline:focus,
+#search-input:focus,
+#date-from:focus,
+#date-to:focus,
+textarea:focus,
+select:focus {
+  border-color: rgba(0,240,255,.45) !important;
+  box-shadow: 0 0 0 3px rgba(0,240,255,.12), 0 10px 26px rgba(0,0,0,.18);
+  transform: translateY(-1px);
+}
+
+.surface-button,
+.surface-tab,
+.tab,
+#export-btn,
+#clear-dates,
+button[onclick] {
+  border-radius: 999px;
+}
+
+.surface-button:hover,
+.surface-tab:hover,
+.tab:hover,
+#export-btn:hover,
+#clear-dates:hover,
+button[onclick]:hover {
+  transform: translateY(-1px);
+}
+
+.surface-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(125,244,255,.1);
+  background: rgba(255,255,255,.03);
+  color: #b9cacb;
+  font-family: 'Geist', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 /* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: #0d1515; }
@@ -248,27 +367,7 @@ body.page-shell::after {
 
 /* ── Glass panel ── */
 .glass-panel {
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(24px) saturate(135%);
-  background: linear-gradient(180deg, rgba(21,29,30,.76), rgba(17,22,34,.44));
-  border: 1px solid rgba(125,244,255,.08);
-  box-shadow: 0 22px 80px rgba(0,0,0,.28);
-  transform-style: preserve-3d;
-  transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, border-color .35s ease;
-}
-.glass-panel::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,.06), transparent 34%, transparent 66%, rgba(0,240,255,.05));
-  pointer-events: none;
-  opacity: .9;
-}
-.glass-panel:hover {
-  transform: translateY(-3px) rotateX(1deg);
-  border-color: rgba(125,244,255,.16);
-  box-shadow: 0 26px 90px rgba(0,0,0,.34);
+  border-radius: 18px;
 }
 
 /* ── Glow effects ── */
@@ -304,6 +403,47 @@ canvas { max-width: 100%; }
 @keyframes shimmer {
   from { transform: translate3d(-12%, 0, 0); }
   to { transform: translate3d(12%, 0, 0); }
+}
+
+@media (max-width: 980px) {
+  .content-stage {
+    scrollbar-gutter: auto;
+  }
+
+  .orientation-bar {
+    padding: 10px 12px;
+    margin-bottom: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .surface-card,
+  .glass-panel {
+    border-radius: 16px;
+  }
+
+  .surface-card:hover,
+  .glass-panel:hover {
+    transform: translateY(-2px);
+  }
+
+  .orientation-bar {
+    gap: 6px;
+  }
+
+  .orientation-pill {
+    padding: 5px 9px;
+    font-size: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* ── Heatmap hour cell ── */

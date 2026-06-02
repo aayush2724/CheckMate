@@ -250,7 +250,7 @@ function renderTable() {
     const dateStr = v.in_time ? new Date(v.in_time).toLocaleDateString([], {month:'short',day:'numeric'}) : '';
 
     // Actions — Tailwind micro-buttons
-    const btnBase = 'inline-flex items-center gap-[3px] px-[8px] py-[3px] rounded text-[10px] font-code-snippet uppercase tracking-widest transition-all border cursor-pointer';
+    const btnBase = 'surface-button inline-flex items-center gap-[3px] px-[8px] py-[3px] rounded text-[10px] font-code-snippet uppercase tracking-widest transition-all border cursor-pointer';
     let acts = '';
     if (v.scheduled && !v.out_time)
       acts += `<button class="${btnBase} border-secondary/30 bg-secondary/10 text-secondary hover:bg-secondary/20" onclick="allowEntry('${id}')">Allow In</button>`;

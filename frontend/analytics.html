@@ -114,7 +114,7 @@ tailwind.config = {
         <option value="30" selected>Last 30 days</option>
         <option value="90">Last 90 days</option>
       </select>
-      <button onclick="exportReport()" class="flex items-center gap-xs px-md py-xs bg-primary-container text-on-primary-container rounded font-label-sm uppercase tracking-widest hover:brightness-110 transition-all glow-sm">
+      <button onclick="exportReport()" class="surface-button flex items-center gap-xs px-md py-xs bg-primary-container text-on-primary-container rounded font-label-sm uppercase tracking-widest hover:brightness-110 transition-all glow-sm">
         <span class="material-symbols-outlined text-[15px]">download</span>
         Export
       </button>
@@ -137,22 +137,22 @@ tailwind.config = {
 
       <!-- Summary stats -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-md mb-lg">
-        <div class="p-md rounded-xl border border-outline-variant/10 bg-surface-container-lowest/60">
+        <div class="surface-card surface-card--dense p-md rounded-xl border border-outline-variant/10 bg-surface-container-lowest/60">
           <p class="text-[10px] text-on-surface-variant uppercase tracking-widest font-code-snippet mb-xs">Today</p>
           <p class="font-headline-md text-primary text-display-lg-mobile" id="s-today">—</p>
           <p class="text-[10px] text-on-surface-variant font-code-snippet mt-xs">visitors checked in</p>
         </div>
-        <div class="p-md rounded-xl border border-outline-variant/10 bg-surface-container-lowest/60">
+        <div class="surface-card surface-card--dense p-md rounded-xl border border-outline-variant/10 bg-surface-container-lowest/60">
           <p class="text-[10px] text-on-surface-variant uppercase tracking-widest font-code-snippet mb-xs">This Week</p>
           <p class="font-headline-md text-secondary text-display-lg-mobile" id="s-week">—</p>
           <p class="text-[10px] text-on-surface-variant font-code-snippet mt-xs">this week</p>
         </div>
-        <div class="p-md rounded-xl border border-outline-variant/10 bg-surface-container-lowest/60">
+        <div class="surface-card surface-card--dense p-md rounded-xl border border-outline-variant/10 bg-surface-container-lowest/60">
           <p class="text-[10px] text-on-surface-variant uppercase tracking-widest font-code-snippet mb-xs">This Month</p>
           <p class="font-headline-md text-primary-fixed-dim text-display-lg-mobile" id="s-month">—</p>
           <p class="text-[10px] text-on-surface-variant font-code-snippet mt-xs">this month</p>
         </div>
-        <div class="p-md rounded-xl border border-outline-variant/10 bg-surface-container-lowest/60">
+        <div class="surface-card surface-card--dense p-md rounded-xl border border-outline-variant/10 bg-surface-container-lowest/60">
           <p class="text-[10px] text-on-surface-variant uppercase tracking-widest font-code-snippet mb-xs">Avg Duration</p>
           <p class="font-headline-md text-tertiary-fixed-dim text-display-lg-mobile" id="s-avg">—</p>
           <p class="text-[10px] text-on-surface-variant font-code-snippet mt-xs">minutes per visit</p>
@@ -161,14 +161,14 @@ tailwind.config = {
 
       <!-- Trends + Dept pie -->
       <div class="grid grid-cols-12 gap-gutter mb-gutter">
-        <div class="col-span-12 lg:col-span-8 glass-panel rounded-xl p-lg">
+        <div class="surface-card surface-card--hero col-span-12 lg:col-span-8 glass-panel rounded-xl p-lg">
           <div class="flex items-center justify-between mb-md">
             <h3 class="font-headline-md text-headline-md text-primary">Visit Trends</h3>
             <span class="text-[10px] text-on-surface-variant font-code-snippet uppercase">Daily walk-ins vs scheduled</span>
           </div>
           <canvas id="trends-chart" height="100"></canvas>
         </div>
-        <div class="col-span-12 lg:col-span-4 glass-panel rounded-xl p-lg">
+        <div class="surface-card surface-card--hero col-span-12 lg:col-span-4 glass-panel rounded-xl p-lg">
           <h3 class="font-headline-md text-headline-md text-primary mb-md">By Department</h3>
           <div class="flex items-center justify-center" style="max-height:220px;">
             <canvas id="dept-chart"></canvas>
@@ -178,19 +178,19 @@ tailwind.config = {
 
       <!-- Type + Purpose + Peak hours -->
       <div class="grid grid-cols-12 gap-gutter mb-gutter">
-        <div class="col-span-12 md:col-span-4 glass-panel rounded-xl p-lg">
+        <div class="surface-card surface-card--dense col-span-12 md:col-span-4 glass-panel rounded-xl p-lg">
           <h3 class="font-headline-md text-primary mb-md text-sm font-semibold uppercase tracking-widest">Visitor Types</h3>
           <div class="flex items-center justify-center" style="max-height:200px;">
             <canvas id="type-chart"></canvas>
           </div>
         </div>
-        <div class="col-span-12 md:col-span-4 glass-panel rounded-xl p-lg">
+        <div class="surface-card surface-card--dense col-span-12 md:col-span-4 glass-panel rounded-xl p-lg">
           <h3 class="font-headline-md text-primary mb-md text-sm font-semibold uppercase tracking-widest">Purpose of Visit</h3>
           <div class="flex items-center justify-center" style="max-height:200px;">
             <canvas id="purpose-chart"></canvas>
           </div>
         </div>
-        <div class="col-span-12 md:col-span-4 glass-panel rounded-xl p-lg">
+        <div class="surface-card surface-card--dense col-span-12 md:col-span-4 glass-panel rounded-xl p-lg">
           <h3 class="font-headline-md text-primary mb-md text-sm font-semibold uppercase tracking-widest">Peak Hours</h3>
           <div class="hours-grid" id="hours-grid" style="display:grid;grid-template-columns:repeat(12,1fr);gap:4px;"></div>
           <div class="hours-labels" id="hours-labels"></div>
@@ -199,7 +199,7 @@ tailwind.config = {
 
       <!-- Bottom: repeat visitors + dept bar -->
       <div class="grid grid-cols-12 gap-gutter">
-        <div class="col-span-12 md:col-span-5 glass-panel rounded-xl p-lg">
+        <div class="surface-card surface-card--dense col-span-12 md:col-span-5 glass-panel rounded-xl p-lg">
           <div class="flex items-center gap-xs mb-md">
             <span class="material-symbols-outlined text-primary-container text-[18px]">repeat</span>
             <h3 class="font-headline-md text-primary text-sm font-semibold uppercase tracking-widest">Frequent Visitors</h3>
@@ -208,7 +208,7 @@ tailwind.config = {
             <li class="py-md text-on-surface-variant text-[11px] font-code-snippet uppercase tracking-widest opacity-50">Loading...</li>
           </ul>
         </div>
-        <div class="col-span-12 md:col-span-7 glass-panel rounded-xl p-lg">
+        <div class="surface-card surface-card--hero col-span-12 md:col-span-7 glass-panel rounded-xl p-lg">
           <h3 class="font-headline-md text-primary mb-md text-sm font-semibold uppercase tracking-widest">Department Breakdown</h3>
           <canvas id="dept-bar-chart" height="160"></canvas>
         </div>
