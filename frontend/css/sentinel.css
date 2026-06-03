@@ -44,12 +44,14 @@ body.page-shell::after {
   background-size: 42px 42px;
   opacity: 0.12;
   mask-image: linear-gradient(to bottom, rgba(0,0,0,0.95), rgba(0,0,0,0.45));
+  pointer-events: none;
 }
 
 .scene-ribbon {
   background: linear-gradient(110deg, transparent 0%, rgba(255,255,255,0.02) 18%, transparent 38%, rgba(0,240,255,0.04) 60%, transparent 82%, rgba(78,222,163,0.03) 100%);
   opacity: 0.75;
   animation: shimmer 14s linear infinite;
+  pointer-events: none;
 }
 
 .scene-orb {
@@ -59,6 +61,7 @@ body.page-shell::after {
   mix-blend-mode: screen;
   opacity: 0.8;
   animation: drift 20s ease-in-out infinite alternate;
+  pointer-events: none;
 }
 
 .scene-orb.one {
@@ -95,6 +98,9 @@ body.page-shell::after {
   scrollbar-width: thin;
   scrollbar-color: #3b494b transparent;
   scrollbar-gutter: stable both-edges;
+  pointer-events: auto;
+  overflow-y: auto !important;
+  overflow-x: hidden;
 }
 
 .content-stage::-webkit-scrollbar { width: 10px; }
