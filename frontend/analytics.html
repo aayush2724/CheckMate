@@ -7,6 +7,7 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="css/enhanced-styles.css" rel="stylesheet"/>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
 .material-symbols-outlined {
@@ -205,7 +206,7 @@ tailwind.config = {
       
       <!-- Summary Stats Cards -->
       <div class="grid grid-cols-1 md:grid-cols-4 gap-md mb-lg">
-        <div class="bg-surface-container-lowest border border-surface-variant p-md rounded flex items-center justify-between">
+        <div class="bg-surface-container-lowest border border-surface-variant p-md rounded-medium card-elevated hover-lift transition-all fade-in stagger-1">
           <div>
             <p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">TODAY'S VISITS</p>
             <p class="font-headline-md text-headline-md text-primary" id="stat-today">—</p>
@@ -213,7 +214,7 @@ tailwind.config = {
           <span class="material-symbols-outlined text-secondary opacity-50">event</span>
         </div>
         
-        <div class="bg-surface-container-lowest border border-surface-variant p-md rounded flex items-center justify-between">
+        <div class="bg-surface-container-lowest border border-surface-variant p-md rounded-medium card-elevated hover-lift transition-all fade-in stagger-2">
           <div>
             <p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">THIS WEEK</p>
             <p class="font-headline-md text-headline-md text-primary" id="stat-week">—</p>
@@ -221,7 +222,7 @@ tailwind.config = {
           <span class="material-symbols-outlined text-primary">calendar_today</span>
         </div>
         
-        <div class="bg-surface-container-lowest border border-surface-variant p-md rounded flex items-center justify-between">
+        <div class="bg-surface-container-lowest border border-surface-variant p-md rounded-medium card-elevated hover-lift transition-all fade-in stagger-3">
           <div>
             <p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">THIS MONTH</p>
             <p class="font-headline-md text-headline-md text-primary" id="stat-month">—</p>
@@ -229,7 +230,7 @@ tailwind.config = {
           <span class="material-symbols-outlined text-primary">calendar_month</span>
         </div>
         
-        <div class="bg-surface-container-lowest border border-surface-variant p-md rounded flex items-center justify-between">
+        <div class="bg-surface-container-lowest border border-surface-variant p-md rounded-medium card-elevated hover-lift transition-all fade-in stagger-4">
           <div>
             <p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">AVG DURATION</p>
             <p class="font-headline-md text-headline-md text-primary" id="stat-duration">—</p>

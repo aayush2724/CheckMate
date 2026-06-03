@@ -6,7 +6,8 @@
 <title>Visitor Check-In | CheckMate</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols_Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="css/enhanced-styles.css" rel="stylesheet"/>
 <script id="tailwind-config">
 tailwind.config = {
   darkMode: "class",
@@ -126,121 +127,190 @@ tailwind.config = {
     </div>
   </div>
   
-  <!-- Content Area: Landscape Grid -->
-  <div class="flex-1 p-margin-desktop grid grid-cols-12 gap-gutter overflow-y-auto">
-    <!-- Left Column: Visitor Info Form -->
-    <section class="col-span-12 lg:col-span-5 flex flex-col gap-md">
-      <div class="p-md bg-surface-container-lowest border border-surface-variant rounded-lg">
-        <h3 class="font-headline-md text-headline-md mb-md text-primary">Visitor Information</h3>
-        <form id="visitor-form" class="space-y-base">
-          <div class="grid grid-cols-2 gap-sm">
-            <div class="space-y-xs">
-              <label class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">First Name</label>
-              <input id="first_name" class="w-full border-surface-variant focus:border-primary focus:ring-0 rounded-none bg-surface" placeholder="John" type="text" required/>
-            </div>
-            <div class="space-y-xs">
-              <label class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Last Name</label>
-              <input id="last_name" class="w-full border-surface-variant focus:border-primary focus:ring-0 rounded-none bg-surface" placeholder="Doe" type="text" required/>
-            </div>
-          </div>
-          
-          <div class="space-y-xs">
-            <label class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Organization</label>
-            <input id="organization" class="w-full border-surface-variant focus:border-primary focus:ring-0 rounded-none bg-surface" placeholder="Global Tech Corp" type="text"/>
-          </div>
-          
-          <div class="space-y-xs">
-            <label class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Purpose of Visit</label>
-            <select id="purpose" class="w-full border-surface-variant focus:border-primary focus:ring-0 rounded-none bg-surface">
-              <option>Business Meeting</option>
-              <option>Technical Maintenance</option>
-              <option>Delivery</option>
-              <option>Contractor Work</option>
-            </select>
-          </div>
-        </form>
-      </div>
+  <!-- Content Area: Reorganized Clean Layout -->
+  <div class="flex-1 p-margin-desktop overflow-y-auto">
+    <div class="max-w-7xl mx-auto">
       
-      <div class="p-md bg-surface-container-lowest border border-surface-variant rounded-lg flex-1">
-        <h3 class="font-headline-md text-headline-md mb-md text-primary">Host Selection</h3>
-        <div class="grid grid-cols-1 gap-sm">
-          <!-- Host Card 1 -->
-          <div class="group flex items-center gap-md p-sm border border-surface-variant hover:border-primary cursor-pointer transition-colors bg-surface" data-host="sarah-chen">
-            <div class="w-12 h-12 rounded border border-surface-variant bg-surface-container flex items-center justify-center">
-              <span class="material-symbols-outlined text-secondary">person</span>
+      <!-- Main Content Grid -->
+      <div class="grid grid-cols-12 gap-lg">
+        
+        <!-- Left Column: Forms Section -->
+        <div class="col-span-12 lg:col-span-5 space-y-lg">
+          
+          <!-- Visitor Information Card -->
+          <div class="bg-surface-container-lowest border border-surface-variant rounded-large shadow-medium p-lg fade-in">
+            <div class="flex items-center justify-between mb-lg">
+              <h3 class="font-headline-md text-headline-md font-bold text-primary">Visitor Information</h3>
+              <span class="material-symbols-outlined text-secondary">badge</span>
             </div>
-            <div class="flex-1">
-              <p class="font-body-md font-bold text-primary">Sarah Chen</p>
-              <p class="font-label-sm text-label-sm text-secondary">Director of Operations</p>
-            </div>
-            <span class="material-symbols-outlined text-surface-variant group-hover:text-primary transition-colors">check_circle</span>
+            
+            <form id="visitor-form" class="space-y-md">
+              <div class="grid grid-cols-2 gap-md">
+                <div class="space-y-sm">
+                  <label class="font-label-sm text-label-sm uppercase tracking-wider text-secondary block">First Name <span class="text-error">*</span></label>
+                  <input id="first_name" class="w-full border border-surface-variant focus:border-primary focus:ring-2 focus:ring-primary/10 rounded-lg bg-surface px-md py-sm input-enhanced transition-all" placeholder="John" type="text" required/>
+                </div>
+                <div class="space-y-sm">
+                  <label class="font-label-sm text-label-sm uppercase tracking-wider text-secondary block">Last Name <span class="text-error">*</span></label>
+                  <input id="last_name" class="w-full border border-surface-variant focus:border-primary focus:ring-2 focus:ring-primary/10 rounded-lg bg-surface px-md py-sm input-enhanced transition-all" placeholder="Doe" type="text" required/>
+                </div>
+              </div>
+              
+              <div class="space-y-sm">
+                <label class="font-label-sm text-label-sm uppercase tracking-wider text-secondary block">Organization</label>
+                <input id="organization" class="w-full border border-surface-variant focus:border-primary focus:ring-2 focus:ring-primary/10 rounded-lg bg-surface px-md py-sm input-enhanced transition-all" placeholder="Company Name" type="text"/>
+              </div>
+              
+              <div class="space-y-sm">
+                <label class="font-label-sm text-label-sm uppercase tracking-wider text-secondary block">Email Address</label>
+                <input id="email" class="w-full border border-surface-variant focus:border-primary focus:ring-2 focus:ring-primary/10 rounded-lg bg-surface px-md py-sm input-enhanced transition-all" placeholder="visitor@example.com" type="email"/>
+              </div>
+              
+              <div class="space-y-sm">
+                <label class="font-label-sm text-label-sm uppercase tracking-wider text-secondary block">Purpose of Visit <span class="text-error">*</span></label>
+                <select id="purpose" class="w-full border border-surface-variant focus:border-primary focus:ring-2 focus:ring-primary/10 rounded-lg bg-surface px-md py-sm input-enhanced transition-all">
+                  <option value="">Select purpose...</option>
+                  <option>Business Meeting</option>
+                  <option>Technical Maintenance</option>
+                  <option>Delivery</option>
+                  <option>Contractor Work</option>
+                  <option>Interview</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </form>
           </div>
           
-          <!-- Host Card 2 -->
-          <div class="group flex items-center gap-md p-sm border border-surface-variant hover:border-primary cursor-pointer transition-colors bg-surface" data-host="marcus-thorne">
-            <div class="w-12 h-12 rounded border border-surface-variant bg-surface-container flex items-center justify-center">
-              <span class="material-symbols-outlined text-secondary">person</span>
+          <!-- Host Selection Card -->
+          <div class="bg-surface-container-lowest border border-surface-variant rounded-large shadow-medium p-lg fade-in stagger-2">
+            <div class="flex items-center justify-between mb-lg">
+              <h3 class="font-headline-md text-headline-md font-bold text-primary">Select Host</h3>
+              <span class="material-symbols-outlined text-secondary">person_search</span>
             </div>
-            <div class="flex-1">
-              <p class="font-body-md font-bold text-primary">Marcus Thorne</p>
-              <p class="font-label-sm text-label-sm text-secondary">Systems Integration Lead</p>
+            
+            <div class="space-y-sm">
+              <!-- Host Search -->
+              <div class="relative mb-md">
+                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary">search</span>
+                <input class="w-full pl-10 pr-4 py-sm bg-surface-container border border-surface-variant rounded-lg text-body-sm focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none" placeholder="Search for a host..." type="text"/>
+              </div>
+              
+              <!-- Host Cards -->
+              <div class="space-y-sm max-h-64 overflow-y-auto">
+                <!-- Host Card 1 -->
+                <div class="group flex items-center gap-md p-md border-2 border-surface-variant hover:border-primary cursor-pointer transition-all bg-surface rounded-lg hover-lift" data-host="sarah-chen">
+                  <div class="w-12 h-12 rounded-full border-2 border-surface-variant bg-surface-container flex items-center justify-center text-secondary group-hover:border-primary group-hover:text-primary transition-all">
+                    <span class="material-symbols-outlined">person</span>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <p class="font-body-md font-bold text-primary truncate">Sarah Chen</p>
+                    <p class="font-label-sm text-label-sm text-secondary truncate">Director of Operations</p>
+                  </div>
+                  <span class="material-symbols-outlined text-surface-variant group-hover:text-primary transition-all">check_circle</span>
+                </div>
+                
+                <!-- Host Card 2 -->
+                <div class="group flex items-center gap-md p-md border-2 border-surface-variant hover:border-primary cursor-pointer transition-all bg-surface rounded-lg hover-lift" data-host="marcus-thorne">
+                  <div class="w-12 h-12 rounded-full border-2 border-surface-variant bg-surface-container flex items-center justify-center text-secondary group-hover:border-primary group-hover:text-primary transition-all">
+                    <span class="material-symbols-outlined">person</span>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <p class="font-body-md font-bold text-primary truncate">Marcus Thorne</p>
+                    <p class="font-label-sm text-label-sm text-secondary truncate">Systems Integration Lead</p>
+                  </div>
+                  <span class="material-symbols-outlined text-surface-variant group-hover:text-primary transition-all">check_circle</span>
+                </div>
+                
+                <!-- Host Card 3 -->
+                <div class="group flex items-center gap-md p-md border-2 border-surface-variant hover:border-primary cursor-pointer transition-all bg-surface rounded-lg hover-lift" data-host="jennifer-williams">
+                  <div class="w-12 h-12 rounded-full border-2 border-surface-variant bg-surface-container flex items-center justify-center text-secondary group-hover:border-primary group-hover:text-primary transition-all">
+                    <span class="material-symbols-outlined">person</span>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <p class="font-body-md font-bold text-primary truncate">Jennifer Williams</p>
+                    <p class="font-label-sm text-label-sm text-secondary truncate">HR Manager</p>
+                  </div>
+                  <span class="material-symbols-outlined text-surface-variant group-hover:text-primary transition-all">check_circle</span>
+                </div>
+              </div>
             </div>
-            <span class="material-symbols-outlined text-surface-variant group-hover:text-primary transition-colors">check_circle</span>
           </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Right Column: Biometric Scan -->
-    <section class="col-span-12 lg:col-span-7 flex flex-col gap-md">
-      <div class="p-md bg-surface-container-lowest border border-surface-variant rounded-lg flex-1 flex flex-col">
-        <div class="flex justify-between items-center mb-md">
-          <h3 class="font-headline-md text-headline-md text-primary">Biometric Verification</h3>
-          <span class="px-2 py-1 bg-surface-container text-label-sm font-bold uppercase tracking-widest">Live Feed: CAM-04</span>
+          
         </div>
         
-        <!-- Camera Placeholder / Scan View -->
-        <div class="flex-1 relative bg-black rounded flex items-center justify-center overflow-hidden group">
-          <!-- Overlay Graphics -->
-          <div class="absolute inset-0 border-[24px] border-black opacity-40"></div>
-          <div class="relative w-64 h-64 border-2 border-white/50 rounded-full flex items-center justify-center scan-pulse">
-            <div class="w-1 h-full bg-white/20 absolute left-1/2 -translate-x-1/2"></div>
-            <div class="h-1 w-full bg-white/20 absolute top-1/2 -translate-y-1/2"></div>
-            <span class="material-symbols-outlined text-white text-5xl opacity-40">face</span>
+        <!-- Right Column: Biometric Section -->
+        <div class="col-span-12 lg:col-span-7 space-y-lg">
+          
+          <!-- Biometric Verification Card -->
+          <div class="bg-surface-container-lowest border border-surface-variant rounded-large shadow-medium p-lg fade-in stagger-3">
+            <div class="flex justify-between items-center mb-lg">
+              <div>
+                <h3 class="font-headline-md text-headline-md font-bold text-primary">Biometric Verification</h3>
+                <p class="font-body-sm text-secondary mt-1">Scan visitor face for identity verification</p>
+              </div>
+              <div class="flex items-center gap-xs px-md py-xs bg-surface-container rounded-full">
+                <span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+                <span class="font-label-sm text-label-sm uppercase tracking-widest">CAM-04 LIVE</span>
+              </div>
+            </div>
+            
+            <!-- Camera Feed / Scan View -->
+            <div class="relative bg-gradient-to-br from-surface-dim to-surface-container rounded-lg overflow-hidden aspect-[4/3] flex items-center justify-center group border border-surface-variant">
+              <!-- Scan Frame -->
+              <div class="relative w-full h-full flex items-center justify-center p-lg">
+                <div class="relative w-72 h-72 border-4 border-dashed border-primary/30 rounded-full flex items-center justify-center scan-pulse">
+                  <div class="w-1 h-full bg-primary/10 absolute left-1/2 -translate-x-1/2"></div>
+                  <div class="h-1 w-full bg-primary/10 absolute top-1/2 -translate-y-1/2"></div>
+                  <span class="material-symbols-outlined text-primary/20 text-[120px]">face</span>
+                </div>
+              </div>
+              
+              <!-- Scan Button Overlay -->
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <button class="px-xl py-md bg-white text-black font-bold tracking-widest flex items-center gap-sm hover:bg-surface-variant transition-all rounded-lg shadow-elevated btn-press" id="startScanBtn">
+                  <span class="material-symbols-outlined">photo_camera</span>START SCAN
+                </button>
+              </div>
+            </div>
+            
+            <!-- Status Indicators -->
+            <div class="mt-lg grid grid-cols-3 gap-md">
+              <div class="bg-surface border border-surface-variant rounded-lg p-md text-center">
+                <p class="font-label-sm text-label-sm text-secondary uppercase mb-xs">Status</p>
+                <p class="font-body-md font-bold text-primary" id="scan-status">AWAITING INPUT</p>
+              </div>
+              <div class="bg-surface border border-surface-variant rounded-lg p-md text-center">
+                <p class="font-label-sm text-label-sm text-secondary uppercase mb-xs">Confidence</p>
+                <p class="font-body-md font-bold text-primary" id="scan-confidence">--%</p>
+              </div>
+              <div class="bg-surface border border-surface-variant rounded-lg p-md text-center">
+                <p class="font-label-sm text-label-sm text-secondary uppercase mb-xs">Encryption</p>
+                <p class="font-body-md font-bold text-primary flex items-center justify-center gap-xs">
+                  <span class="material-symbols-outlined text-sm">lock</span>AES-256
+                </p>
+              </div>
+            </div>
           </div>
           
-          <!-- Scan Controls -->
-          <div class="absolute bottom-md left-1/2 -translate-x-1/2 flex gap-sm">
-            <button class="px-lg py-sm bg-white text-black font-bold tracking-widest flex items-center gap-sm hover:bg-surface-variant transition-all" id="startScanBtn">
-              <span class="material-symbols-outlined">photo_camera</span>START SCAN
+          <!-- Action Buttons -->
+          <div class="flex gap-md justify-end">
+            <button class="px-xl py-md border-2 border-primary text-primary font-bold hover:bg-surface-container-low transition-all rounded-lg btn-press" onclick="window.location.href='dashboard.html'">
+              <span class="flex items-center gap-sm">
+                <span class="material-symbols-outlined">close</span>CANCEL
+              </span>
+            </button>
+            <button class="px-xl py-md bg-primary text-on-primary font-bold btn-gradient hover-glow transition-all rounded-lg btn-press shadow-medium" id="proceedBtn">
+              <span class="flex items-center gap-sm">
+                <span class="material-symbols-outlined">arrow_forward</span>PROCEED TO VERIFICATION
+              </span>
             </button>
           </div>
+          
         </div>
         
-        <!-- Meta Info -->
-        <div class="mt-md grid grid-cols-3 gap-md border-t border-surface-variant pt-md">
-          <div class="space-y-xs">
-            <p class="font-label-sm text-label-sm text-secondary uppercase">Status</p>
-            <p class="font-body-md font-bold text-primary" id="scan-status">AWAITING INPUT</p>
-          </div>
-          <div class="space-y-xs">
-            <p class="font-label-sm text-label-sm text-secondary uppercase">Confidence</p>
-            <p class="font-body-md font-bold text-primary" id="scan-confidence">--%</p>
-          </div>
-          <div class="space-y-xs">
-            <p class="font-label-sm text-label-sm text-secondary uppercase">Encryption</p>
-            <p class="font-body-md font-bold text-primary flex items-center gap-1">
-              <span class="material-symbols-outlined text-sm">lock</span>AES-256
-            </p>
-          </div>
-        </div>
       </div>
       
-      <div class="flex gap-sm justify-end">
-        <button class="px-lg py-sm border border-primary text-primary font-bold hover:bg-surface-container transition-colors" onclick="window.location.href='dashboard.html'">CANCEL</button>
-        <button class="px-lg py-sm bg-primary text-on-primary font-bold hover:opacity-90 transition-opacity" id="proceedBtn">PROCEED TO VERIFICATION</button>
-      </div>
-    </section>
+    </div>
   </div>
 </main>
 

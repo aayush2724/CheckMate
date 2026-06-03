@@ -7,6 +7,7 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;900&family=JetBrains+Mono&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="css/enhanced-styles.css" rel="stylesheet"/>
 <script id="tailwind-config">
 tailwind.config = {
   darkMode: "class",
@@ -151,8 +152,8 @@ body {
   </div>
 
   <!-- Primary CTA -->
-  <div class="mt-xl w-full max-w-[520px]">
-    <button class="w-full py-md bg-primary text-on-primary font-title-lg text-title-lg hover:opacity-90 transition-all active:scale-[0.98] flex items-center justify-center gap-base" id="start-btn">
+  <div class="mt-xl w-full max-w-[520px] slide-in-up">
+    <button class="w-full py-md bg-primary text-on-primary font-title-lg text-title-lg btn-gradient hover-glow transition-all rounded-medium btn-press shadow-medium active:scale-[0.98] flex items-center justify-center gap-base" id="start-btn">
       <span class="material-symbols-outlined">android_fingerprint</span>
       START AUTHENTICATION
     </button>
