@@ -2,6 +2,7 @@
 node_modules/
 
 # Environment variables (NEVER commit these)
+.env
 backend/.env
 
 # Uploads & logs
@@ -11,4 +12,3 @@ server.log
 
 # Deployment artifacts
 .netlify
-config.bat
